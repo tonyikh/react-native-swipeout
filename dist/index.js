@@ -403,11 +403,19 @@ var Swipeout = (0, _createReactClass2.default)({
         right: 0
       }
     };
+    let _result = this._rubberBandEasing(posX, limit)
     var styleContentPos = {
       content: {
-        transform: [{ translateX: this._rubberBandEasing(posX, limit) }]
+        transform: [{ translateX: isNaN(_result)?0: _result }]
       }
     };
+    /*
+    var styleContentPos = {
+      content: {
+        transform: [{ translateX: this._rubberBandEasing(posX, limit) }],
+      },
+    };
+    */
 
     var styleContent = [_styles2.default.swipeoutContent];
     styleContent.push(styleContentPos.content);
