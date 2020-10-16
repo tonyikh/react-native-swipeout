@@ -366,11 +366,19 @@ const Swipeout = createReactClass({
         right: 0,
       },
     };
+    let _result = this._rubberBandEasing(posX, limit)
+    var styleContentPos = {
+      content: {
+        transform: [{ translateX: isNaN(_result)?0: _result }]
+      }
+    };
+    /*
     var styleContentPos = {
       content: {
         transform: [{ translateX: this._rubberBandEasing(posX, limit) }],
       },
     };
+    */
 
     var styleContent = [styles.swipeoutContent];
     styleContent.push(styleContentPos.content);
